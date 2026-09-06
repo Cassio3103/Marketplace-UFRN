@@ -10,12 +10,12 @@ Projeto desenvolvido para a disciplina **DIM0510 — Processos de Software**, co
 
 | Nome | Matrícula | Usuário GitHub |
 |---|---|---|
-| _[Cássio Felipe Paiva Ferreira da Silva ]_ | _[20240058085]_ | _[@Cassio3103]_ |
+| _Cássio Felipe Paiva Ferreira da Silva_ | _20240058085_ | _@Cassio3103_ |
 
 
 ## Integração com outras disciplinas
 
-_[Não há integração.]_
+_Não há integração._
 
 ## Documentação
 
