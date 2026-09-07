@@ -45,8 +45,7 @@ O **IMDConecta** é um marketplace peer-to-peer que conecta estudantes da UFRN q
 
 ## 3. Backlog e quadro Kanban
 
-- Backlog (GitHub Projects): _[link pendente — T4]_
-- Quadro Kanban: _[link pendente — T5]_
+- Quadro Kanban/_Backlog_: _https://github.com/users/Cassio3103/projects/5_
 
 ---
 
@@ -70,7 +69,7 @@ O **IMDConecta** é um marketplace peer-to-peer que conecta estudantes da UFRN q
     - Sprint Planning (20-30 min, início da sprint): selecionar itens do backlog pra sprint
     - Check-in (10 min, semanal — dá pra alinhar com as aulas de segunda/quarta): atualizar o quadro Kanban, revisar progresso
     - Sprint Review (20-30 min, antes da apresentação): validar entregas contra critérios de aceite, preparar a apresentação
-    - Sprint Retrospective (15 min, logo após a apresentação): registrar o que funcionou/travou pra ajustar a sprint seguinte_
+    - Sprint Retrospective (15 min, logo após a apresentação): registrar o que funcionou/travou pra ajustar a sprint seguinte
 - **Definição de Pronto (DoD):** 
     -Funcionalidade implementada e testada manualmente
     - Código commitado no repositório com mensagem clara
