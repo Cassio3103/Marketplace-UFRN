@@ -91,7 +91,7 @@ O **IMDConecta** é um marketplace peer-to-peer que conecta estudantes da UFRN q
 |---|---|---|
 | _Cássio_ | _20240058085_ | _Cassio3103_ |
 
-**Coorte de apresentação:** _[preencher]_
+**Coorte de apresentação:** _B_
 
 ---
 

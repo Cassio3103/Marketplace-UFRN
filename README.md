@@ -6,7 +6,7 @@ Projeto desenvolvido para a disciplina **DIM0510 — Processos de Software**, co
 
 ## Equipe
 
-**Coorte de apresentação:** _[preencher: turno/turma/data]_
+**Coorte de apresentação:** _B_
 
 | Nome | Matrícula | Usuário GitHub |
 |---|---|---|
@@ -20,5 +20,5 @@ _Não há integração._
 ## Documentação
 
 - Proposta completa: [`docs/proposta.md`](docs/proposta.md)
-- Backlog e quadro Kanban: _[link do GitHub Projects]_
-- Vídeo de apresentação: _[link]_
+- Backlog e quadro Kanban:  _https://github.com/users/Cassio3103/projects/5_
+- Vídeo de apresentação: _(https://youtu.be/tTVIQaBPh2k)_
