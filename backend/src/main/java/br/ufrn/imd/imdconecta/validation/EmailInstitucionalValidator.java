@@ -5,6 +5,11 @@ import jakarta.validation.ConstraintValidatorContext;
 public class EmailInstitucionalValidator {
 
     public boolean isValid(String email, ConstraintValidatorContext context) {
-        return false;
+
+        if(email == null){
+            return false;
+        }
+
+        return email.endsWith("@ufrn.edu.br");
     }
 }
