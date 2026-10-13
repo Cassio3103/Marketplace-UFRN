@@ -1,4 +1,4 @@
-package br.ufrn.imd.imdconecta.usuario;
+package br.ufrn.imd.imdconecta.entity;
 
 import jakarta.validation.ConstraintViolation;
 import jakarta.validation.Validation;
