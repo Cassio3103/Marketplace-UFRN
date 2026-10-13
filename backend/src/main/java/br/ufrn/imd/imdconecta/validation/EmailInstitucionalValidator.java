@@ -1,8 +1,9 @@
 package br.ufrn.imd.imdconecta.validation;
 
+import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
 
-public class EmailInstitucionalValidator {
+public class EmailInstitucionalValidator implements ConstraintValidator<EmailInstitucional, String> {
 
     public boolean isValid(String email, ConstraintValidatorContext context) {
 
