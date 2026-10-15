@@ -24,7 +24,7 @@ O **IMDConecta** é um marketplace peer-to-peer que conecta estudantes da UFRN q
 **Hipótese de valor:** Acredito que estudantes da UFRN vão usar uma plataforma para buscar e oferecer monitoria e freelas acadêmicos entre pares porque isso resolve uma lacuna que o WhatsApp e a monitoria formal não cobrem — busca estruturada por disciplina/habilidade, dentro de uma comunidade de confiança.
 
 **Dentro do MVP:**
-- Cadastro com e-mail institucional (@estudante.ufrn.br / @imd.ufrn.br)
+- Cadastro com e-mail institucional (@ufrn.edu.br)
 - Criar anúncio (título, disciplina ou categoria de habilidade, descrição, preço, disponibilidade)
 - Busca com filtro por disciplina e por categoria de habilidade
 - Contato direto via link externo (ex: WhatsApp)
@@ -39,8 +39,7 @@ O **IMDConecta** é um marketplace peer-to-peer que conecta estudantes da UFRN q
 
 **Critérios de "pronto" do MVP:** um estudante autenticado consegue publicar um anúncio de monitoria ou freela, e outro estudante consegue encontrá-lo via busca filtrada e entrar em contato, sem intervenção manual.
 
-**Viabilidade:** escopo desenhado para ser entregável por 1 desenvolvedor em 4 sprints.
-
+**Viabilidade:** escopo desenhado para ser entregável por 1 desenvolvedor nas Sprints 1 e 2 (a Sprint 2 é a entrega final, em 30/11).
 ---
 
 ## 3. Backlog e quadro Kanban
@@ -59,9 +58,8 @@ O **IMDConecta** é um marketplace peer-to-peer que conecta estudantes da UFRN q
 ## 5. Acordo de processo
 
 - **Cadência:** _Sprints de 3 semanas:_
-    - Sprint 1: 14/09 a 02/10
-    - Sprint 2: 05/10 a 23/10
-    - Sprint 3: 26/10 a 20/11
+    - Sprint 1: 14/09 a 16/10
+    - Sprint 2 (final): 01/11 a 30/11
     - Bloco final: 23/11 a 11/12
     - Planejamento: início de cada sprint (primeira segunda-feira do período)
     - Fechamento: sexta-feira da semana de entrega, até 23:59 (data oficial de entrega)
