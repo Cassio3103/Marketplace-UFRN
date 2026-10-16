@@ -95,4 +95,4 @@ O workflow em `.github/workflows/ci.yml` compila e roda os testes a cada push e 
 
 ## Vídeo da Sprint 1
 
-_[link — a preencher]_
+_[link — (https://youtu.be/mvfK4KJYolM)]_
