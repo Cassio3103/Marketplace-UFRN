@@ -37,7 +37,7 @@ sudo -u postgres psql
 
 ```sql
 CREATE DATABASE imdconecta;
-CREATE USER imdconecta_user WITH PASSWORD 'troque_esta_senha';
+CREATE USER imdconecta_user WITH PASSWORD 'senha_exemplo';
 GRANT ALL PRIVILEGES ON DATABASE imdconecta TO imdconecta_user;
 \c imdconecta
 GRANT ALL ON SCHEMA public TO imdconecta_user;
@@ -50,7 +50,7 @@ As tabelas são criadas automaticamente pelo Hibernate quando a aplicação sobe
 
 ```bash
 export DB_USERNAME=imdconecta_user
-export DB_PASSWORD=troque_esta_senha
+export DB_PASSWORD=senha_exemplo
 ```
 
 ### 3. Subir a aplicação
