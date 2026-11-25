@@ -43,5 +43,8 @@ jobs:
           java-version: "21"
           cache: maven
 
+      - name: Lint (Checkstyle)
+        run: ./mvnw -B checkstyle:check
+
       - name: Compilar e rodar os testes
         run: ./mvnw -B verify
