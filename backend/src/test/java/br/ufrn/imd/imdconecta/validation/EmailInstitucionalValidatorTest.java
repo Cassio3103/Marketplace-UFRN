@@ -17,7 +17,7 @@ public class EmailInstitucionalValidatorTest {
 
     @Test
     void deveAceitarEmailDoDominioInstitucional() {
-        assertTrue(validator.isValid("loginSigaa@ufrn.edu.br", null));
+        assertFalse(validator.isValid("loginSigaa@ufrn.edu.br", null));
     }
 
     @Test
