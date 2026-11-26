@@ -95,4 +95,8 @@ O workflow em `.github/workflows/ci.yml` compila e roda os testes a cada push e 
 
 ## Vídeo da Sprint 1
 
-_[link — (https://youtu.be/mvfK4KJYolM)]_
+_https://youtu.be/mvfK4KJYolM_
+
+## Proteção da branch main
+
+A `main` exige pull request e o check `build-e-testes` (lint, build e testes) verde antes do merge, inclusive para administradores. Evidência: o PR #18 quebrou um teste de propósito e teve o merge bloqueado.
