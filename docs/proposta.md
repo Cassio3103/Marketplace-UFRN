@@ -69,7 +69,8 @@ O **IMDConecta** é um marketplace peer-to-peer que conecta estudantes da UFRN q
     - Sprint Review (20-30 min, antes da apresentação): validar entregas contra critérios de aceite, preparar a apresentação
     - Sprint Retrospective (15 min, logo após a apresentação): registrar o que funcionou/travou pra ajustar a sprint seguinte
 - **Definição de Pronto (DoD):** 
-    -Funcionalidade implementada e testada manualmente
+    - docker compose up sobe o projeto sem erro. 
+    - Funcionalidade implementada e testada manualmente
     - Código commitado no repositório com mensagem clara
     - Sem erros bloqueantes conhecidos
     - Critério de aceitação da user story atendido

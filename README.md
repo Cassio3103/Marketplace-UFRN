@@ -23,6 +23,16 @@ _Não há integração._
 - Backlog e quadro Kanban:  _https://github.com/users/Cassio3103/projects/5_
 - Vídeo de apresentação: _(https://youtu.be/tTVIQaBPh2k)_
 
+## Execução com Docker (recomendada)
+
+Só precisa de Docker e Docker Compose:
+
+```bash
+docker compose up --build
+```
+
+A API sobe em `http://localhost:8080`, com o PostgreSQL já configurado. Para parar e apagar o banco: `docker compose down -v`.
+
 ## Como executar o backend
 
 ### Pré-requisitos
