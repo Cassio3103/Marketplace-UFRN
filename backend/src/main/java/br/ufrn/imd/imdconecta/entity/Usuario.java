@@ -20,7 +20,7 @@ public class Usuario {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long usuarioId;
 
     @NotBlank(message = "O nome é obrigatório")
     @Column(nullable = false)
