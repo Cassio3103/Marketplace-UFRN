@@ -3,6 +3,7 @@ package br.ufrn.imd.imdconecta.service;
 import br.ufrn.imd.imdconecta.dto.CriarAnuncioRequest;
 import br.ufrn.imd.imdconecta.entity.Anuncio;
 import br.ufrn.imd.imdconecta.entity.CategoriaAnuncio;
+import br.ufrn.imd.imdconecta.entity.StatusAnuncio;
 import br.ufrn.imd.imdconecta.entity.Usuario;
 import br.ufrn.imd.imdconecta.repository.AnuncioRepository;
 import br.ufrn.imd.imdconecta.repository.UsuarioRepository;
@@ -31,6 +32,19 @@ public class AnuncioService {
     }
 
     public List<Anuncio> buscar(CategoriaAnuncio categoria, String disciplina) {
-        return null;
+        String disciplinaFiltro = (disciplina == null || disciplina.isBlank()) ? null : disciplina.trim();
+
+        if (categoria == null && disciplinaFiltro == null) {
+            return anuncioRepository.findByStatusOrderByCriadoEmDesc(StatusAnuncio.ATIVO);
+        }
+        if (disciplinaFiltro == null) {
+            return anuncioRepository.findByStatusAndCategoriaOrderByCriadoEmDesc(StatusAnuncio.ATIVO, categoria);
+        }
+        if (categoria == null) {
+            return anuncioRepository.findByStatusAndDisciplinaIgnoreCaseOrderByCriadoEmDesc(
+                    StatusAnuncio.ATIVO, disciplinaFiltro);
+        }
+        return anuncioRepository.findByStatusAndCategoriaAndDisciplinaIgnoreCaseOrderByCriadoEmDesc(
+                StatusAnuncio.ATIVO, categoria, disciplinaFiltro);
     }
 }
