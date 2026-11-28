@@ -21,6 +21,12 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
         return ResponseEntity.status(HttpStatus.CONFLICT).body(resposta);
     }
 
+    @ExceptionHandler(AnuncioNaoEncontradoException.class)
+    public ResponseEntity<RestErrorMessage> emailJaCadastradoException(AnuncioNaoEncontradoException exception) {
+        RestErrorMessage resposta = new RestErrorMessage(HttpStatus.NOT_FOUND, exception.getMessage());
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(resposta);
+    }
+
     @Override
     protected ResponseEntity<Object> handleMethodArgumentNotValid(
             MethodArgumentNotValidException ex,

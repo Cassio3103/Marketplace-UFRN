@@ -47,4 +47,8 @@ public class AnuncioService {
         return anuncioRepository.findByStatusAndCategoriaAndDisciplinaIgnoreCaseOrderByCriadoEmDesc(
                 StatusAnuncio.ATIVO, categoria, disciplinaFiltro);
     }
+
+    public Anuncio buscarPorId(Long anuncioId) {
+        return null;
+    }
 }
