@@ -29,16 +29,16 @@ public class AnuncioController {
     }
 
     @PostMapping
-    public ResponseEntity<AnuncioResponse> criar(@Valid @RequestBody CriarAnuncioRequest request,
+    public ResponseEntity<AnuncioResponse> criarAnuncio(@Valid @RequestBody CriarAnuncioRequest request,
                                                  Principal principal) {
-        Anuncio anuncio = service.criar(principal.getName(), request);
+        Anuncio anuncio = service.criarAnuncio(principal.getName(), request);
         return ResponseEntity.status(HttpStatus.CREATED).body(AnuncioResponse.from(anuncio));
     }
 
     @GetMapping
-    public List<AnuncioResponse> buscar(@RequestParam(required = false) CategoriaAnuncio categoria,
+    public List<AnuncioResponse> buscarAnuncio(@RequestParam(required = false) CategoriaAnuncio categoria,
                                         @RequestParam(required = false) String disciplina) {
-        return service.buscar(categoria, disciplina).stream()
+        return service.buscarAnuncio(categoria, disciplina).stream()
                 .map(AnuncioResponse::from)
                 .toList();
     }

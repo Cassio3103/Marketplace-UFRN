@@ -48,7 +48,7 @@ class AnuncioBuscaControllerTest {
 
     @Test
     void deveListarAnunciosSemFiltro() throws Exception {
-        when(service.buscar(null, null)).thenReturn(List.of(anuncio()));
+        when(service.buscarAnuncio(null, null)).thenReturn(List.of(anuncio()));
 
         mockMvc.perform(get("/api/anuncios"))
                 .andExpect(status().isOk())
@@ -59,7 +59,7 @@ class AnuncioBuscaControllerTest {
 
     @Test
     void devePassarOsFiltrosParaOServico() throws Exception {
-        when(service.buscar(CategoriaAnuncio.MONITORIA, "Cálculo 1")).thenReturn(List.of(anuncio()));
+        when(service.buscarAnuncio(CategoriaAnuncio.MONITORIA, "Cálculo 1")).thenReturn(List.of(anuncio()));
 
         mockMvc.perform(get("/api/anuncios")
                         .param("categoria", "MONITORIA")
@@ -73,6 +73,6 @@ class AnuncioBuscaControllerTest {
         mockMvc.perform(get("/api/anuncios").param("categoria", "INEXISTENTE"))
                 .andExpect(status().isBadRequest());
 
-        verify(service, never()).buscar(any(), any());
+        verify(service, never()).buscarAnuncio(any(), any());
     }
 }

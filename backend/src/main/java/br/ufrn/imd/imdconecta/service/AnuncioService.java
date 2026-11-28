@@ -23,7 +23,7 @@ public class AnuncioService {
         this.usuarioRepository = usuarioRepository;
     }
 
-    public Anuncio criar(String emailAnunciante, CriarAnuncioRequest request) {
+    public Anuncio criarAnuncio(String emailAnunciante, CriarAnuncioRequest request) {
         Usuario anunciante = usuarioRepository.findByEmail(emailAnunciante)
                 .orElseThrow(() -> new UsernameNotFoundException("Usuário não encontrado: " + emailAnunciante));
         Anuncio anuncio = new Anuncio(anunciante, request.titulo(), request.categoria(), request.disciplina(),
@@ -31,7 +31,7 @@ public class AnuncioService {
         return anuncioRepository.save(anuncio);
     }
 
-    public List<Anuncio> buscar(CategoriaAnuncio categoria, String disciplina) {
+    public List<Anuncio> buscarAnuncio(CategoriaAnuncio categoria, String disciplina) {
         String disciplinaFiltro = (disciplina == null || disciplina.isBlank()) ? null : disciplina.trim();
 
         if (categoria == null && disciplinaFiltro == null) {

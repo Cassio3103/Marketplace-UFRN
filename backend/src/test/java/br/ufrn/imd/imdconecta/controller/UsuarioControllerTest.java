@@ -41,7 +41,7 @@ class UsuarioControllerTest {
     @Test
     void deveCadastrarUsuarioComEmailInstitucional() throws Exception {
         Usuario salvo = new Usuario("Aluno Teste", "aluno@ufrn.edu.br", "hash");
-        when(service.cadastrar("Aluno Teste", "aluno@ufrn.edu.br", "senha123")).thenReturn(salvo);
+        when(service.cadastrarUsuario("Aluno Teste", "aluno@ufrn.edu.br", "senha123")).thenReturn(salvo);
 
         mockMvc.perform(post("/api/usuarios")
                         .contentType(MediaType.APPLICATION_JSON)
@@ -63,12 +63,12 @@ class UsuarioControllerTest {
                 .andExpect(status().isBadRequest())
                 .andExpect(jsonPath("$.message").value(containsString("@ufrn.edu.br")));
 
-        verify(service, never()).cadastrar(any(), any(), any());
+        verify(service, never()).cadastrarUsuario(any(), any(), any());
     }
 
     @Test
     void deveRetornarConflitoParaEmailJaCadastrado() throws Exception {
-        when(service.cadastrar("Aluno Teste", "aluno@ufrn.edu.br", "senha123"))
+        when(service.cadastrarUsuario("Aluno Teste", "aluno@ufrn.edu.br", "senha123"))
                 .thenThrow(new EmailJaCadastradoException("aluno@ufrn.edu.br"));
 
         mockMvc.perform(post("/api/usuarios")

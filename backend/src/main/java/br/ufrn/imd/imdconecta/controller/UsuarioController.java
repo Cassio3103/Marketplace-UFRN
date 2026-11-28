@@ -23,8 +23,8 @@ public class UsuarioController {
     }
 
     @PostMapping
-    public ResponseEntity<UsuarioResponse> cadastrar(@Valid @RequestBody CadastroRequest request) {
-        Usuario usuario = service.cadastrar(request.nome(), request.email(), request.senha());
+    public ResponseEntity<UsuarioResponse> cadastrarUsuario(@Valid @RequestBody CadastroRequest request) {
+        Usuario usuario = service.cadastrarUsuario(request.nome(), request.email(), request.senha());
         return ResponseEntity.status(HttpStatus.CREATED).body(UsuarioResponse.from(usuario));
     }
 }

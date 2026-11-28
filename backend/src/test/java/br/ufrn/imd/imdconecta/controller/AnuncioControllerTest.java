@@ -48,7 +48,7 @@ class AnuncioControllerTest {
         Usuario usuario = new Usuario("Aluno Teste", "aluno@ufrn.edu.br", "hash");
         Anuncio criado = new Anuncio(usuario, "Monitoria de Cálculo 1", CategoriaAnuncio.MONITORIA, "Cálculo 1",
                 "Revisão de limites e derivadas", new BigDecimal("30.00"), "Seg e qua à tarde", "84999990000");
-        when(service.criar(eq("aluno@ufrn.edu.br"), any(CriarAnuncioRequest.class))).thenReturn(criado);
+        when(service.criarAnuncio(eq("aluno@ufrn.edu.br"), any(CriarAnuncioRequest.class))).thenReturn(criado);
 
         mockMvc.perform(post("/api/anuncios")
                         .principal(() -> "aluno@ufrn.edu.br")
@@ -77,6 +77,6 @@ class AnuncioControllerTest {
                 .andExpect(status().isBadRequest())
                 .andExpect(jsonPath("$.message").value(containsString("título")));
 
-        verify(service, never()).criar(any(), any());
+        verify(service, never()).criarAnuncio(any(), any());
     }
 }

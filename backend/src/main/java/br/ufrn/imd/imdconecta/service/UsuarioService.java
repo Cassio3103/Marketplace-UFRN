@@ -17,7 +17,7 @@ public class UsuarioService {
         this.passwordEncoder = passwordEncoder;
     }
 
-    public Usuario cadastrar(String nome, String email, String senha) {
+    public Usuario cadastrarUsuario(String nome, String email, String senha) {
         if (repository.existsByEmail(email)) {
             throw new EmailJaCadastradoException(email);
         }
