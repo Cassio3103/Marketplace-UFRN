@@ -47,7 +47,7 @@ class AnuncioServiceTest {
         when(usuarioRepository.findByEmail("aluno@ufrn.edu.br")).thenReturn(Optional.of(usuario));
         when(anuncioRepository.save(any(Anuncio.class))).thenAnswer(inv -> inv.getArgument(0));
 
-        Anuncio criado = service.criar("aluno@ufrn.edu.br", requisicao());
+        Anuncio criado = service.criarAnuncio("aluno@ufrn.edu.br", requisicao());
 
         assertEquals(usuario, criado.getAnunciante());
         assertEquals("Monitoria de Cálculo 1", criado.getTitulo());
@@ -60,7 +60,7 @@ class AnuncioServiceTest {
         when(usuarioRepository.findByEmail("naoexiste@ufrn.edu.br")).thenReturn(Optional.empty());
 
         assertThrows(UsernameNotFoundException.class,
-                () -> service.criar("naoexiste@ufrn.edu.br", requisicao()));
+                () -> service.criarAnuncio("naoexiste@ufrn.edu.br", requisicao()));
 
         verify(anuncioRepository, never()).save(any());
     }

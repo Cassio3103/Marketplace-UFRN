@@ -5,6 +5,7 @@ import br.ufrn.imd.imdconecta.entity.Anuncio;
 import br.ufrn.imd.imdconecta.entity.CategoriaAnuncio;
 import br.ufrn.imd.imdconecta.entity.StatusAnuncio;
 import br.ufrn.imd.imdconecta.entity.Usuario;
+import br.ufrn.imd.imdconecta.exception.AnuncioNaoEncontradoException;
 import br.ufrn.imd.imdconecta.repository.AnuncioRepository;
 import br.ufrn.imd.imdconecta.repository.UsuarioRepository;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -23,7 +24,7 @@ public class AnuncioService {
         this.usuarioRepository = usuarioRepository;
     }
 
-    public Anuncio criar(String emailAnunciante, CriarAnuncioRequest request) {
+    public Anuncio criarAnuncio(String emailAnunciante, CriarAnuncioRequest request) {
         Usuario anunciante = usuarioRepository.findByEmail(emailAnunciante)
                 .orElseThrow(() -> new UsernameNotFoundException("Usuário não encontrado: " + emailAnunciante));
         Anuncio anuncio = new Anuncio(anunciante, request.titulo(), request.categoria(), request.disciplina(),
@@ -31,7 +32,7 @@ public class AnuncioService {
         return anuncioRepository.save(anuncio);
     }
 
-    public List<Anuncio> buscar(CategoriaAnuncio categoria, String disciplina) {
+    public List<Anuncio> buscarAnuncio(CategoriaAnuncio categoria, String disciplina) {
         String disciplinaFiltro = (disciplina == null || disciplina.isBlank()) ? null : disciplina.trim();
 
         if (categoria == null && disciplinaFiltro == null) {
@@ -46,5 +47,10 @@ public class AnuncioService {
         }
         return anuncioRepository.findByStatusAndCategoriaAndDisciplinaIgnoreCaseOrderByCriadoEmDesc(
                 StatusAnuncio.ATIVO, categoria, disciplinaFiltro);
+    }
+
+    public Anuncio buscarPorId(Long anuncioId) {
+        return anuncioRepository.findById(anuncioId)
+                .orElseThrow(() -> new AnuncioNaoEncontradoException("Anúncio " + anuncioId + " não encontrado"));
     }
 }

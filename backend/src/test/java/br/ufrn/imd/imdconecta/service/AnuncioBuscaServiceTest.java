@@ -41,7 +41,7 @@ class AnuncioBuscaServiceTest {
         List<Anuncio> esperados = List.of(anuncio());
         when(anuncioRepository.findByStatusOrderByCriadoEmDesc(StatusAnuncio.ATIVO)).thenReturn(esperados);
 
-        assertEquals(esperados, service.buscar(null, null));
+        assertEquals(esperados, service.buscarAnuncio(null, null));
     }
 
     @Test
@@ -50,7 +50,7 @@ class AnuncioBuscaServiceTest {
         when(anuncioRepository.findByStatusAndCategoriaOrderByCriadoEmDesc(
                 StatusAnuncio.ATIVO, CategoriaAnuncio.MONITORIA)).thenReturn(esperados);
 
-        assertEquals(esperados, service.buscar(CategoriaAnuncio.MONITORIA, null));
+        assertEquals(esperados, service.buscarAnuncio(CategoriaAnuncio.MONITORIA, null));
     }
 
     @Test
@@ -59,7 +59,7 @@ class AnuncioBuscaServiceTest {
         when(anuncioRepository.findByStatusAndDisciplinaIgnoreCaseOrderByCriadoEmDesc(
                 StatusAnuncio.ATIVO, "Cálculo 1")).thenReturn(esperados);
 
-        assertEquals(esperados, service.buscar(null, "Cálculo 1"));
+        assertEquals(esperados, service.buscarAnuncio(null, "Cálculo 1"));
     }
 
     @Test
@@ -68,7 +68,7 @@ class AnuncioBuscaServiceTest {
         when(anuncioRepository.findByStatusAndCategoriaAndDisciplinaIgnoreCaseOrderByCriadoEmDesc(
                 StatusAnuncio.ATIVO, CategoriaAnuncio.MONITORIA, "Cálculo 1")).thenReturn(esperados);
 
-        assertEquals(esperados, service.buscar(CategoriaAnuncio.MONITORIA, "Cálculo 1"));
+        assertEquals(esperados, service.buscarAnuncio(CategoriaAnuncio.MONITORIA, "Cálculo 1"));
     }
 
     @Test
@@ -76,6 +76,6 @@ class AnuncioBuscaServiceTest {
         List<Anuncio> esperados = List.of(anuncio());
         when(anuncioRepository.findByStatusOrderByCriadoEmDesc(StatusAnuncio.ATIVO)).thenReturn(esperados);
 
-        assertEquals(esperados, service.buscar(null, "   "));
+        assertEquals(esperados, service.buscarAnuncio(null, "   "));
     }
 }
