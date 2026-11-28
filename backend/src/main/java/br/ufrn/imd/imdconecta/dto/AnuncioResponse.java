@@ -2,6 +2,7 @@ package br.ufrn.imd.imdconecta.dto;
 
 import br.ufrn.imd.imdconecta.entity.Anuncio;
 import br.ufrn.imd.imdconecta.entity.CategoriaAnuncio;
+import br.ufrn.imd.imdconecta.util.LinkContato;
 
 import java.math.BigDecimal;
 
@@ -14,6 +15,7 @@ public record AnuncioResponse(
         BigDecimal preco,
         String disponibilidade,
         String contato,
+        String linkContato,
         String anunciante) {
 
     public static AnuncioResponse from(Anuncio anuncio) {
@@ -26,6 +28,7 @@ public record AnuncioResponse(
                 anuncio.getPreco(),
                 anuncio.getDisponibilidade(),
                 anuncio.getContato(),
+                LinkContato.whatsapp(anuncio.getContato()),
                 anuncio.getAnunciante().getNome());
     }
 }

@@ -5,6 +5,7 @@ import br.ufrn.imd.imdconecta.entity.Anuncio;
 import br.ufrn.imd.imdconecta.entity.CategoriaAnuncio;
 import br.ufrn.imd.imdconecta.entity.StatusAnuncio;
 import br.ufrn.imd.imdconecta.entity.Usuario;
+import br.ufrn.imd.imdconecta.exception.AnuncioNaoEncontradoException;
 import br.ufrn.imd.imdconecta.repository.AnuncioRepository;
 import br.ufrn.imd.imdconecta.repository.UsuarioRepository;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -49,6 +50,7 @@ public class AnuncioService {
     }
 
     public Anuncio buscarPorId(Long anuncioId) {
-        return null;
+        return anuncioRepository.findById(anuncioId)
+                .orElseThrow(() -> new AnuncioNaoEncontradoException("Anúncio " + anuncioId + " não encontrado"));
     }
 }
